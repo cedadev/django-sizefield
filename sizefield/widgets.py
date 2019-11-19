@@ -13,7 +13,7 @@ class FileSizeWidget(forms.TextInput):
         self.ambiguous_suffix = ambiguous_suffix
         self.assume_binary = assume_binary
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if value:
             try:
                 value = filesizeformat(value, is_binary=self.is_binary, ambiguous_suffix=self.ambiguous_suffix)
